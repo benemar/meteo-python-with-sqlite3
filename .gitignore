@@ -8,6 +8,9 @@ env/
 *.log
 log.txt
 
+# file zip
+*.zip
+
 # Cache di Python
 __pycache__/
 *.pyc
