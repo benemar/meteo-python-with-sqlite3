@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo live</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5555/static/css/style.css">
+</head>
+<body>
+    <h1>Meteo live {{citta | title}}</h1>
+    {% if ora > 6 and ora < 12 %}
+    <p>Buon giorno</p>
+    {% elif ora >= 12 and ora < 18 %}
+    <p>Buon pomeriggio</p>
+    {% elif ora >= 18 and ora < 22 %}
+    <p>Buona sera</p>
+    {% else %}
+    <p>Buona notte</p>
+    {% endif %}
+
+    <h3>Previsione per la giornata di oggi</h3>
+    {% if previsione_meteo == 0 %}
+    <div>
+        <p>Oggi è previsto sole e caldo</p>
+        <img src="http://127.0.0.1:5555/static/img/sole.jpg">
+    </div>
+    {% elif previsione_meteo == 1 %}
+    <div>
+        <p>Oggi è una giornata serena con poche nuvole</p>
+        <img src="http://127.0.0.1:5555/static/img/sereno.png">
+    </div>
+    {% else %}
+    <div>
+        <p>Oggi è prevista pioggia</p>
+        <img src="http://127.0.0.1:5555/static/img/pioggia.jpg">
+    </div>
+    {% endif %}
+
+</body>
+</html>
